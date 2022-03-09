@@ -24,6 +24,9 @@ function InitBoard () {
         for (let x = 0; x < 12; x++) {
             const cell = document.createElement('div')
             cell.classList.add('cell')
+            if (x == 0 || x == 11 || y == 0 || y == 21) {
+                cell.classList.add('border')
+            }
             rowElement.appendChild(cell)
             row.push(cell)
         }
