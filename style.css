@@ -1,0 +1,19 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 50vmin;
+    height: calc(50vmin / 12 * 22);
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    /* height: ; */
+    flex-grow: 1;
+}
+
+.cell {
+    background-color: black;
+    flex-grow: 1;
+    
+}
