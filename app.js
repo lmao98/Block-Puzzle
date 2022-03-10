@@ -63,9 +63,12 @@ function InitBoard () {
         for (let x = 0; x < 12; x++) {
             const cell = document.createElement('div')
             cell.classList.add('cell')
-            if (x == 0 || x == 11 || y == 0 || y == 21) {
+            if (x == 0 || x == 11 || y == 0 ) {
                 cell.classList.add('border')
-            } else {
+            } else if (y == 21) {
+                cell.classList.add('border')
+                cell.onclick = dropPiece
+            }else {
                 cell.classList.add('empty')
                 cell.onclick = rotatePiece
             }
@@ -171,6 +174,15 @@ function movePieceDown() {
         return;
     }
     addPiece()
+}
+
+function dropPiece() {
+    removePiece();
+    while (checkPiece()) {
+        currentPiece.coordinates.y++
+    }
+    currentPiece.coordinates.y--
+    addPiece();
 }
 
 function movePieceHorizontally(x) {
