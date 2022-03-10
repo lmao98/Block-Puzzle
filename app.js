@@ -16,6 +16,7 @@
 // maybe some mussic ?
 const board = []
 const boardElement = document.querySelector('.board')
+const scoreElement = document.querySelector('.score')
 const pieces = [
     [
         [1,1],
@@ -152,6 +153,11 @@ function pullLinesDown(startY) {
     }
 }
 
+function increaseScore() {
+    score += 100
+    scoreElement.textContent = score
+}
+
 function checkLines() {
     for (let y in board) {
         const row = board[y]
@@ -160,7 +166,7 @@ function checkLines() {
             row.every((cell) => {return !cell.classList.contains('empty')})
         ) {
             pullLinesDown(y);
-            score += 100
+            increaseScore();
         }
     }
 }
