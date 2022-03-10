@@ -42,3 +42,12 @@ main {
 .green {
     background-color: green;
 }
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vmin;
+    height: calc(50vmin / 12 * 22);
+    position: absolute;
+}
