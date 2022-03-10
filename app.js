@@ -53,6 +53,7 @@ const pieces = [
         [0,1,0]
     ]
 ]
+let currentPiece = null
 function InitBoard () {
     for (let y = 0; y < 22; y++){
         const row = []
@@ -73,9 +74,23 @@ function InitBoard () {
         board.push(row)
     }
 }
+function getNextPiece() {
+    const pieceIndex = Math.floor(Math.random()* pieces.length)
+    const piece = pieces[pieceIndex]
+    currentPiece = {
+        piece,
+        coordinates: {
+            x: 1, 
+            y: 1
+        }
+    }
+}
+
 
 function gameCycle () {
-
+    if (currentPiece === null) {
+        getNextPiece()
+    }
 }
 InitBoard();
 gameCycle();
