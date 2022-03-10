@@ -116,10 +116,32 @@ function getNextPiece() {
     
     addPiece();
 }
+function checkPiece() {
+    for (let y in currentPiece.piece) {
+        for(let x in currentPiece.piece[y]) {
+            const currentPieceCell = currentPiece.piece[y][x]
+            if (currentPieceCell === 1) {
+                let xCoord = +x + currentPiece.coordinates.x
+                let yCoord = +y + currentPiece.coordinates.y
+                let boardCell = board[yCoord][xCoord]
+                if (!boardCell.classList.contains('empty')) {
+                    return false
+                }
+            }
+        }
+    }
+    return true
+}
 
 function movePieceDown() {
     removePiece();
     currentPiece.coordinates.y++;
+    if(!checkPiece()){
+        currentPiece.coordinates.y--;
+        addPiece();
+        getNextPiece();
+        return;
+    }
     addPiece()
 }
 
