@@ -1,3 +1,8 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -15,10 +20,13 @@
 .cell {
     background-color: black;
     flex-grow: 1;
-    
+    border: calc(50vmin / 12 * .2) outset rgba(150, 150, 150, .5);
 }
 
 .border {
     background-color: gray;
-    
+}
+
+.empty {
+    border-color: transparent;
 }

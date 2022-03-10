@@ -63,6 +63,8 @@ function InitBoard () {
             cell.classList.add('cell')
             if (x == 0 || x == 11 || y == 0 || y == 21) {
                 cell.classList.add('border')
+            } else {
+                cell.classList.add('empty')
             }
             rowElement.appendChild(cell)
             row.push(cell)
@@ -71,5 +73,9 @@ function InitBoard () {
         board.push(row)
     }
 }
+
+function gameCycle () {
+
+}
 InitBoard();
-console.log(board)
+gameCycle();
