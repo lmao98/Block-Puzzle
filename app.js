@@ -67,6 +67,7 @@ function InitBoard () {
                 cell.classList.add('border')
             } else {
                 cell.classList.add('empty')
+                cell.onclick = rotatePiece
             }
             rowElement.appendChild(cell)
             row.push(cell)
@@ -146,6 +147,19 @@ function movePieceDown() {
         return;
     }
     addPiece()
+}
+
+function rotatePiece() {
+    removePiece();
+    currentPiece.piece = currentPiece.piece[0].map((val, index) =>
+    currentPiece.piece.map((row) => row[index]).reverse()
+  );
+  if (!checkPiece()) {
+    currentPiece.piece = currentPiece.piece[0].map((val, index) =>
+    currentPiece.piece.map((row) => row[row.length - 1 - index])
+  );
+  }
+  addPiece();
 }
 
 function gameCycle () {
