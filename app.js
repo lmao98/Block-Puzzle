@@ -140,12 +140,33 @@ function checkPiece() {
     return true
 }
 
+function pullLinesDown(startY) {
+    for (let y = startY; y > 1; y--) {
+        board[y].forEach((cell, x) => {
+            cell.className = board[y-1][x].className
+        });
+    }
+}
+
+function checkLines() {
+    for (let y in board) {
+        const row = board[y]
+        if (
+            !row[1].classList.contains('border') &&
+            row.every((cell) => {return !cell.classList.contains('empty')})
+        ) {
+            pullLinesDown(y);
+        }
+    }
+}
+
 function movePieceDown() {
     removePiece();
     currentPiece.coordinates.y++;
     if(!checkPiece()){
         currentPiece.coordinates.y--;
         addPiece();
+        checkLines();
         getNextPiece();
         return;
     }
