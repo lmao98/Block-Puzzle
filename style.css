@@ -30,3 +30,7 @@ main {
 .empty {
     border-color: transparent;
 }
+
+.green {
+    background-color: green;
+}

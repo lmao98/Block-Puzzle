@@ -74,6 +74,20 @@ function InitBoard () {
         board.push(row)
     }
 }
+function addPiece(){
+    for (let y in currentPiece.piece) {
+        for(let x in currentPiece.piece[y]) {
+            const currentPieceCell = currentPiece.piece[y][x]
+            if (currentPieceCell === 1) {
+                let xCoord = +x + currentPiece.coordinates.x
+                let yCoord = +y + currentPiece.coordinates.y
+                let boardCell = board[yCoord][xCoord]
+                boardCell.classList.remove('empty')
+                boardCell.classList.add('green')
+            }
+        }
+    }
+}
 function getNextPiece() {
     const pieceIndex = Math.floor(Math.random()* pieces.length)
     const piece = pieces[pieceIndex]
@@ -84,6 +98,8 @@ function getNextPiece() {
             y: 1
         }
     }
+    
+    addPiece();
 }
 
 
