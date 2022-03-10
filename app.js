@@ -55,6 +55,7 @@ const pieces = [
 ]
 let currentPiece = null
 let gameState = 0
+let score = 0
 function InitBoard () {
     for (let y = 0; y < 22; y++){
         const row = []
@@ -159,6 +160,7 @@ function checkLines() {
             row.every((cell) => {return !cell.classList.contains('empty')})
         ) {
             pullLinesDown(y);
+            score += 100
         }
     }
 }
@@ -217,7 +219,7 @@ function gameCycle () {
         movePieceDown();
     }
     if (gameState === 1) {
-        alert('Game Over')
+        alert('Score: '+score)
         return;
     }
     setTimeout(gameCycle,1000)
