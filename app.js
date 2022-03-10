@@ -69,6 +69,9 @@ function InitBoard () {
                 cell.classList.add('empty')
                 cell.onclick = rotatePiece
             }
+            cell.onmouseover = () => {
+                movePieceHorizontally(x);
+            }
             rowElement.appendChild(cell)
             row.push(cell)
         }
@@ -147,6 +150,18 @@ function movePieceDown() {
         return;
     }
     addPiece()
+}
+
+function movePieceHorizontally(x) {
+    removePiece();
+    const direction = currentPiece.coordinates.x > x ? -1: 1
+    while (checkPiece()&& currentPiece.coordinates.x != x) {
+        currentPiece.coordinates.x += direction
+    } 
+    if (!checkPiece()) {
+        currentPiece.coordinates.x -= direction
+    } 
+    addPiece();
 }
 
 function rotatePiece() {
