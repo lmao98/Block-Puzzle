@@ -16,6 +16,8 @@
 // maybe some mussic ?
 const board = []
 const boardElement = document.querySelector('.board')
+const startElement = document.querySelector('.start')
+const controlsElement = document.querySelector('.controls')
 const scoreElement = document.querySelector('.score')
 const pieces = [
     [
@@ -225,10 +227,14 @@ function gameCycle () {
         movePieceDown();
     }
     if (gameState === 1) {
-        alert('Score: '+score)
+        alert('Nice try! Score: '+score)
         return;
     }
     setTimeout(gameCycle,1000)
 }
-InitBoard();
-gameCycle();
+
+startElement.onclick = () => {
+    controlsElement.classList.add('hidden')
+    InitBoard();
+    gameCycle();
+}
