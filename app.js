@@ -119,6 +119,8 @@ function getNextPiece() {
 
 function movePieceDown() {
     removePiece();
+    currentPiece.coordinates.y++;
+    addPiece()
 }
 
 function gameCycle () {
