@@ -3,6 +3,14 @@ main {
     justify-content: center;
 }
 
+.scoreDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vmin;
+}
+
 .board {
     display: flex;
     flex-direction: column;
