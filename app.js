@@ -54,6 +54,7 @@ const pieces = [
     ]
 ]
 let currentPiece = null
+let gameState = 0
 function InitBoard () {
     for (let y = 0; y < 22; y++){
         const row = []
@@ -113,7 +114,9 @@ function getNextPiece() {
             y: 1
         }
     }
-    
+    if (!checkPiece()) {
+        gameState = 1
+    }
     addPiece();
 }
 function checkPiece() {
@@ -150,6 +153,10 @@ function gameCycle () {
         getNextPiece()
     }else {
         movePieceDown();
+    }
+    if (gameState === 1) {
+        alert('Game Over')
+        return;
     }
     setTimeout(gameCycle,1000)
 }
