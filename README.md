@@ -5,21 +5,30 @@
 ***
 ## **Date: 03/08/2022**
 ### **By: Abdullah Albayati**
-### *Tetrs Game*
-#### Teters created with HTML, CSS, JS.
+### *Tetris Game*
+#### Tetris created with HTML, CSS, JS.
 ***
 ### *Technologies*
 1. HTML
 2. CSS
 3. Javascript
 ***
+### Instructions
+#### Fork and clone the repo
+#### open index.html or use the link for the game linked here.
+#### start the game and enjoy
+***
 
+### Link to the game's website
+[Block-puzzle](abdullah-cub.surge.sh)
 ### *Screenshots*
-
+![Image](https://i.ibb.co/JsJcz0W/Screen-Shot-2022-03-10-at-2-25-57-PM.png)
 ***
 - [x] Adding my Info.
-- [ ] photos of the project
-- [ ] Completed Update
-- [ ] Testing the game
+- [x] photos of the project
+- [x] Testing the game
 ***
 ### *Credits*
+##### Tetris Ruls [Wikipedia](https://en.wikipedia.org/wiki/Tetris#)
+##### The look of each shape in Tetris [markmliu](https://markmliu.medium.com/the-tetris-proof-60a7a69a8e04)
+***
